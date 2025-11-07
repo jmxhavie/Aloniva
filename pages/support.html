@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Support | Aloniva</title>
+  <link rel="canonical" href="https://aloniva.com/support" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- ===========================
+    ALONIVA ICON & METADATA SETUP
+  =========================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A1D37">
+  <meta name="application-name" content="Aloniva">
+  <meta name="msapplication-TileColor" content="#0A1D37">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aloniva",
+    "url": "https://aloniva.com/",
+    "logo": "https://aloniva.com/assets/icons/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/aloniva",
+      "https://www.facebook.com/aloniva",
+      "https://www.linkedin.com/company/aloniva"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__bar">
+      <!-- Global Search -->
+      <div class="global-search" role="search">
+        <label class="sr-only" for="globalSearch">Search products and ingredients</label>
+        <input
+          id="globalSearch"
+          class="search-input"
+          type="search"
+          placeholder="Search products or ingredients…"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="searchListbox"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+        />
+        <div id="searchListbox" class="search-dropdown" role="listbox" aria-label="Search suggestions" hidden></div>
+      </div>
+      <script type="module">
+        import '../tools/search.js';
+      </script>
+      <button class="nav-toggle" id="menuBtn" aria-expanded="false" aria-controls="primaryNav"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../pages/shop.html" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <div class="dropdown" role="menu">
+            <a href="../pages/shop.html" role="menuitem">All products</a>
+            <a href="../pages/bestsellers.html" role="menuitem">Bestsellers</a>
+            <a href="../pages/collections.html" role="menuitem">Shop by concern</a>
+            <a href="../pages/routine-builder.html" role="menuitem">Routine Builder</a>
+            <a href="../pages/ingredients.html" role="menuitem">Ingredients</a>
+          </div>
+        </div>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../blog/" aria-expanded="false" aria-haspopup="true">Learn</button>
+          <div class="dropdown" role="menu">
+            <a href="../pages/trust.html" role="menuitem">Our promise</a>
+            <a href="../pages/blogs.html" role="menuitem">Blog</a>
+            <a href="../pages/faq.html" role="menuitem">FAQ</a>
+          </div>
+        </div>
+        <a href="../pages/support.html" aria-current="page">Support</a>
+        <a href="../pages/formula-builder.html">Formula Builder</a>
+      </nav>
+      <a class="brand" href="../index.html" aria-label="Aloniva home"><img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="44" height="44" /></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section hero hero--subpage" id="contact"><div class="container hero-content"><span class="hero-badge">We’re here to help</span><h1>Contact & Retail Partners</h1><p class="hero-text">Reach our support team or find a pickup location near you.</p></div></section>
+    <section class="section reveal"><div class="container columns"><div class="card"><h2>Contact</h2><p><strong>Phone:</strong> <a href="tel:+256750491105">+256 750 491 105</a><br /><strong>Email:</strong> <a href="mailto:info@aloniva.com.com">info@aloniva.com</a><br />Kampala and Mbarara partner pharmacies</p>
+      <div class="retailers" id="retailers">
+        <h3>Retail partners</h3>
+        <ul>
+          <li>First Pharmacy - Kampala</li>
+          <li>Guardian Health Pharmacy - Kampala</li>
+          <li>D-plus Pharmacy - Mbarara</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Message us</h2>
+      <form action="https://formspree.io/f/xldprdlp" method="POST">
+        <input class="input" name="name" placeholder="Your name" required />
+        <input class="input" name="email" placeholder="Your email" type="email" required />
+        <textarea class="input" name="message" placeholder="How can we help?" rows="4" required></textarea>
+        <button class="btn primary" type="submit">Send</button>
+        <small>Please type and send your message.</small>
+      </form>
+    </div></div>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Aloniva home">
+          <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="96" height="96" />
+        </a>
+        <p class="muted">Evidence-led skincare crafted in Uganda for sun-rich, humid climates.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="../index.html#favorites">Bestsellers</a></li>
+          <li><a href="../index.html#collections">Shop by concern</a></li>
+          <li><a href="../pages/routine-builder.html">Routine Builder</a></li>
+          <li><a href="../pages/offers.html">Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="../index.html#journal">Journal</a></li>
+          <li><a href="../pages/trust.html">Our promise</a></li>
+          <li><a href="../pages/support.html#retailers">Retail partners</a></li>
+          <li><a href="../pages/support.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p class="muted">Nivera Products Ltd<br />P.O.Box 422391, Mbarara<br />Mbarara, Uganda</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/alonivaskincare" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@alonivaskincare" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/@alonivaskincare" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <small>&copy; <span id="year"></span> Nivera Products Ltd. All rights reserved.</small>
+      <small>Made with care in Uganda.</small>
+    </div>
+  </footer>
+  <aside class="cart" id="cart" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Shopping cart"><div class="cart-header row between center"><h3>Your cart</h3><button class="btn icon" id="closeCart" type="button" aria-label="Close cart">&times;</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="row between"><strong>Total</strong><strong id="cartTotal" aria-live="polite">UGX 0</strong></div><p class="cart-delivery" id="cartDelivery" aria-live="polite"></p><button class="btn primary block" id="checkout" type="button">Checkout via WhatsApp</button><button class="btn ghost block" id="clearCart" type="button">Clear cart</button></div></aside>
+  <dialog class="modal" id="quickView" aria-labelledby="qvTitle"><div class="modal-content"><button class="btn icon modal-close" id="closeQV" aria-label="Close" type="button">&times;</button><div class="modal-grid"><img id="qvImg" alt="Product image" /><div><h3 id="qvTitle"></h3><div class="kicker" id="qvMeta"></div><p class="price" id="qvPrice"></p><p class="muted" id="qvDescription">Formulated by pharmacists. Gentle, effective, routine-friendly.</p><button class="btn primary" id="qvAdd" type="button">Add to cart</button></div></div></div></dialog>
+  <script defer src="../data/products.js"></script>
+  <script defer src="../script.js"></script>
+</body></html>

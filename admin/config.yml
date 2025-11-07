@@ -1,0 +1,210 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "settings"
+    label: "Global Settings"
+    file: "data/settings.json"
+    format: "json"
+    fields:
+      - { name: brand, label: Brand Name, widget: string }
+      - { name: whatsapp, label: WhatsApp Intl (no +), widget: string }
+      - { name: supportEmail, label: Support Email, widget: string }
+      - { name: currency, label: Currency, widget: select, options: ["UGX","USD"], default: "UGX" }
+      - { name: social, label: Social Links, widget: object, fields: [
+          { name: instagram, label: Instagram, widget: string, required: false },
+          { name: facebook,  label: Facebook,  widget: string, required: false },
+          { name: linkedin,  label: LinkedIn,  widget: string, required: false }
+        ]}
+
+  - name: "home"
+    label: "Homepage"
+    file: "data/home.json"
+    format: "json"
+    fields:
+      - { name: heroTitle, label: Hero Title, widget: string }
+      - { name: heroSubtitle, label: Hero Subtitle, widget: text }
+      - { name: heroImage, label: Hero Image, widget: image }
+      - { name: promoBar, label: Promo Bar Text, widget: string, required: false }
+      - { name: featured, label: Featured Product IDs, widget: list, field: {name: id, label: Product ID, widget: string} }
+
+  - name: "navigation"
+    label: "Navigation"
+    file: "data/navigation.json"
+    format: "json"
+    fields:
+      - { name: menu, label: Top Menu, widget: list, fields: [
+          { name: label, label: Label, widget: string },
+          { name: url,   label: URL,   widget: string },
+          { name: order, label: Order, widget: number }
+        ]}
+
+  - name: "footer"
+    label: "Footer"
+    file: "data/footer.json"
+    format: "json"
+    fields:
+      - { name: columns, label: Columns, widget: list, fields: [
+          { name: title, label: Title, widget: string },
+          { name: links, label: Links, widget: list, fields: [
+            { name: label, label: Label, widget: string },
+            { name: url,   label: URL,   widget: string }
+          ]}
+        ]}
+      - { name: newsletterText, label: Newsletter Text, widget: text, required: false }
+
+  - name: "seo"
+    label: "SEO Defaults"
+    file: "data/seo.json"
+    format: "json"
+    fields:
+      - { name: defaultTitle, label: Default Title, widget: string }
+      - { name: defaultDescription, label: Default Description, widget: text }
+      - { name: ogImage, label: Default OG Image, widget: image }
+      - { name: canonicalBase, label: Canonical Base URL, widget: string }
+
+  - name: "shipping"
+    label: "Shipping Options"
+    file: "data/shipping.json"
+    format: "json"
+    fields:
+      - { name: options, label: Options, widget: list, fields: [
+          { name: id, label: ID, widget: string },
+          { name: label, label: Label, widget: string },
+          { name: fee, label: Fee, widget: number }
+        ]}
+
+  - name: "payments"
+    label: "Payment Options"
+    file: "data/payments.json"
+    format: "json"
+    fields:
+      - { name: methods, label: Methods, widget: list, fields: [
+          { name: id, label: ID, widget: string },
+          { name: label, label: Label, widget: string }
+        ]}
+
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "data/products"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: id
+    fields:
+      - { name: id,    label: ID, widget: string }
+      - { name: name,  label: Name, widget: string }
+      - { name: short, label: Short Description, widget: text, required: false }
+      - { name: description, label: Full Description, widget: markdown, required: false }
+      - { name: price, label: Price, widget: number, value_type: float, min: 0 }
+      - { name: compareAtPrice, label: Compare At, widget: number, value_type: float, required: false }
+      - { name: step,  label: Step, widget: select, options: ["cleanser","serum","moisturizer","sunscreen","spot"] }
+      - { name: tags,  label: Tags, widget: list, required: false }
+      - { name: image, label: Main Image, widget: image }
+      - { name: gallery, label: Gallery, widget: list, field: { name: image, label: Image, widget: image }, required: false }
+      - { name: inStock, label: In Stock, widget: boolean, default: true }
+      - { name: status, label: Status, widget: select, options: ["live","draft"], default: "live" }
+      - { name: sku, label: SKU, widget: string, required: false }
+
+  - name: "ingredients"
+    label: "Ingredient Library"
+    folder: "data/ingredients"
+    create: true
+    extension: "json"
+    format: "json"
+    fields:
+      - { name: id,        label: ID, widget: string }
+      - { name: inciName,  label: INCI Name, widget: string }
+      - { name: functionTags, label: Function Tags, widget: list, required: false }
+      - { name: solubility,   label: Solubility, widget: list, required: false }
+      - { name: usageMinPct,  label: Usage Min (%), widget: number, required: false }
+      - { name: usageMaxPct,  label: Usage Max (%), widget: number, required: false }
+      - { name: image,       label: Photo URL, widget: string, hint: "Paste a full image URL (e.g. Google-hosted link)", required: false }
+      - { name: notes,        label: Notes, widget: text, required: false }
+      - { name: display,      label: Display Publicly, widget: boolean, default: true }
+
+  - name: "routineRules"
+    label: "Routine Builder Rules"
+    file: "data/routine-rules.json"
+    format: "json"
+    fields:
+      - { name: sensitivity, label: Sensitivity Penalties, widget: list, fields: [
+          { name: tag, label: Tag, widget: string },
+          { name: penalty, label: Penalty, widget: number }
+        ]}
+      - { name: pregnancyBlock, label: Pregnancy Block Tags, widget: list, required: false }
+      - { name: boosts, label: Concern→Tag Boosts, widget: list, fields: [
+          { name: concern, label: Concern, widget: string },
+          { name: tag, label: Tag, widget: string },
+          { name: weight, label: Weight, widget: number }
+        ]}
+
+  - name: "searchConfig"
+    label: "Search Synonyms & Boosts"
+    file: "data/search-config.json"
+    format: "json"
+    fields:
+      - { name: synonyms, label: Synonyms, widget: list, fields: [
+          { name: term, label: Term, widget: string },
+          { name: synonyms, label: Synonyms, widget: list }
+        ]}
+      - { name: boosts, label: Tag Boosts, widget: list, fields: [
+          { name: tag, label: Tag, widget: string },
+          { name: weight, label: Weight, widget: number }
+        ]}
+
+  - name: "banners"
+    label: "Banners & Notifications"
+    file: "data/announcement.json"
+    format: "json"
+    fields:
+      - { name: text, label: Banner Text, widget: string }
+      - { name: start, label: Start Date, widget: datetime, required: false }
+      - { name: end,   label: End Date, widget: datetime, required: false }
+      - { name: dismissible, label: Dismissible, widget: boolean, default: true }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    file: "data/testimonials.json"
+    format: "json"
+    fields:
+      - { name: items, label: Testimonials, widget: list, fields: [
+          { name: name, label: Name, widget: string },
+          { name: rating, label: Rating (1-5), widget: number, min: 1, max: 5 },
+          { name: quote, label: Quote, widget: text },
+          { name: productId, label: Product ID, widget: string, required: false },
+          { name: show, label: Show, widget: boolean, default: true }
+        ]}
+
+  - name: "pages"
+    label: "Static Pages (Markdown)"
+    folder: "pages/cms"
+    create: true
+    extension: "md"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: slug,  label: Slug, widget: string }
+      - { name: cover, label: Cover Image, widget: image, required: false }
+      - { name: body,  label: Body, widget: markdown }
+      - { name: seoTitle, label: SEO Title, widget: string, required: false }
+      - { name: seoDescription, label: SEO Description, widget: text, required: false }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    extension: "md"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: slug,  label: Slug, widget: string }
+      - { name: cover, label: Cover Image, widget: image, required: false }
+      - { name: date,  label: Publish Date, widget: datetime }
+      - { name: tags,  label: Tags, widget: list, required: false }
+      - { name: excerpt, label: Excerpt, widget: text, required: false }
+      - { name: body,  label: Body, widget: markdown }

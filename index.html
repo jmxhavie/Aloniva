@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Aloniva | Pharmacist-Formulated Skincare for Sun-Rich Skin</title>
+  <meta name="description" content="Pharmacist-formulated skincare crafted for humid, sun-rich climates. Shop dermatologist-reviewed routines, bundles, and targeted treatments from Aloniva." />
+  <link rel="canonical" href="https://aloniva.com/" />
+  <meta property="og:title" content="Aloniva | Pharmacist-Formulated Skincare" />
+  <meta property="og:description" content="Shop dermatologist-reviewed routines, bundles, and targeted treatments designed for sun-rich, humid climates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aloniva.com/" />
+  <meta property="og:image" content="https://aloniva.com/assets/meta/aloniva-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aloniva | Pharmacist-Formulated Skincare" />
+  <meta name="twitter:description" content="Pharmacist-formulated routines and targeted care for equatorial skin." />
+  <meta name="color-scheme" content="light" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="preload" href="data/products.js" as="script" />
+  <link rel="preload" as="image" href="assets/freepik/lady-applying-cream.jpg" fetchpriority="high" />
+  <!-- Using system SF Pro Display where available; removed external Google Fonts -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- ===========================
+    ALONIVA ICON & METADATA SETUP
+  =========================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A1D37">
+  <meta name="application-name" content="Aloniva">
+  <meta name="msapplication-TileColor" content="#0A1D37">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aloniva",
+    "url": "https://aloniva.com/",
+    "logo": "https://aloniva.com/assets/icons/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/aloniva",
+      "https://www.facebook.com/aloniva",
+      "https://www.linkedin.com/company/aloniva"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aloniva",
+    "url": "https://aloniva.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://aloniva.com/search?q={search_term}",
+      "query-input": "required name=search_term"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I qualify for free delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Orders above UGX 120,000 qualify for complimentary delivery within Kampala. Add any product to your cart to check your progress in real time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you ship outside Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We currently fulfill nationwide within Uganda via pharmacy partners. Regional East African shipping is available on request through the support form."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I consult a pharmacist before purchase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Use the routine builder or book a WhatsApp consult and our pharmacists will review your routine within 48 hours."
+        }
+      }
+    ]
+  }
+  </script></head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="announcement" role="banner">
+    <div class="container announcement__inner">
+      <span>Free delivery in Kampala for orders over UGX 120,000.</span>
+    </div>
+  </header>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__bar">
+      <!-- Global Search -->
+      <div class="global-search" role="search">
+        <label class="sr-only" for="globalSearch">Search products and ingredients</label>
+        <input
+          id="globalSearch"
+          class="search-input"
+          type="search"
+          placeholder="Search products or ingredients…"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="searchListbox"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+        />
+        <div id="searchListbox" class="search-dropdown" role="listbox" aria-label="Search suggestions" hidden></div>
+      </div>
+      <script type="module">
+        import './tools/search.js';
+      </script>
+      <button class="nav-toggle" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="pages/shop.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuShop">Shop</button>
+          <div class="dropdown" id="menuShop" role="menu">
+            <a href="pages/shop.html" role="menuitem">All products</a>
+            <a href="pages/bestsellers.html" role="menuitem">Bestsellers</a>
+            <a href="pages/collections.html" role="menuitem">Shop by concern</a>
+            <a href="pages/routine-builder.html" role="menuitem">Routine Builder</a>
+            <a href="pages/ingredients.html" role="menuitem">Ingredients</a>
+          </div>
+        </div>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="blog/" aria-expanded="false" aria-haspopup="true" aria-controls="menuLearn">Learn</button>
+          <div class="dropdown" id="menuLearn" role="menu">
+            <a href="pages/trust.html" role="menuitem">Our promise</a>
+            <a href="pages/blogs.html" role="menuitem">Blog</a>
+            <a href="pages/faq.html" role="menuitem">FAQ</a>
+          </div>
+        </div>
+        <a href="pages/support.html">Support</a>
+        <a href="pages/formula-builder.html">Formula Builder</a>
+      </nav>
+      <a class="brand" href="index.html" aria-label="Aloniva home">
+        <img class="brand__mark" src="assets/nivera-logo.svg" alt="Aloniva" width="96" height="96" />
+      </a>
+      <div class="header-actions">
+        <button class="search-toggle" id="searchToggle" type="button" aria-expanded="false" aria-controls="globalSearch">
+          <span class="sr-only">Toggle search</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="20" y1="20" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line></svg>
+        </button>
+        <button class="cart-trigger" aria-label="Cart" aria-expanded="false" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="cart">
+          <span class="cart-trigger__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="9" cy="20" r="1.5" fill="currentColor"></circle>
+              <circle cx="17" cy="20" r="1.5" fill="currentColor"></circle>
+              <path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.5a2 2 0 0 0 1.9-1.4l2-6.4H7.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Cart</span>
+          <span class="cart-trigger__count" id="cartCount" aria-live="polite" aria-atomic="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="bg bg-1"></span>
+        <span class="bg bg-2"></span>
+        <span class="bg bg-3"></span>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-slides" id="heroSlides" aria-hidden="true"></div>
+      <div class="hero-content container">
+        <span class="hero-badge">Clinically guided, climate smart</span>
+        <h1>Skincare formulated for tropical, sun-intense environments</h1>
+        <p class="hero-text">Dermatologist-reviewed formulations that balance barrier support, hydration, and UV defense for equatorial skin.</p>
+        <div class="hero-actions">
+          <a class="btn primary lift" href="pages/routine-builder.html">Shop routines</a>
+          <a class="btn secondary lift" href="pages/shop.html">Build your regimen</a>
+        </div>
+        <dl class="hero-stats">
+          <div>
+            <dt>Verified reviews</dt>
+            <dd><span class="stat" data-count="599">0</span>+</dd>
+          </div>
+          <div>
+            <dt>Retail partners</dt>
+            <dd><span class="stat" data-count="41">0</span></dd>
+          </div>
+          <div>
+            <dt>Formulas tested in</dt>
+            <dd>UG, KE, RW</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section trust reveal" id="trust">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why dermatologists recommend Aloniva</h2>
+          <p>Evidence-led ingredients, transparent labeling, and pharmacist oversight end to end.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="card trust-card" data-icon="climate">
+            <h3>Climate-adapted actives</h3>
+            <p>Formulas stay stable in 32&deg;C heat and high humidity without causing congestion.</p>
+          </article>
+          <article class="card trust-card" data-icon="layers">
+            <h3>Routine-first approach</h3>
+            <p>Every product is designed to layer without irritation for daily AM/PM use.</p>
+          </article>
+          <article class="card trust-card" data-icon="shield">
+            <h3>Dermatologist reviewed</h3>
+            <p>Board-certified dermatologists in Kampala and Nairobi sign off each launch.</p>
+          </article>
+          <article class="card trust-card" data-icon="lab">
+            <h3>Pharmacy-backed quality</h3>
+            <p>Compounded in GMP facilities with rigorous stability and safety testing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section collections reveal" id="collections">
+      <div class="container">
+        <div class="section-heading row between center">
+          <h2>Shop by skin concern</h2>
+          <a class="link" href="#shop">View all products</a>
+        </div>
+        <div class="collections-grid">
+          <article class="collection-card">
+            <img src="assets/freepik/lady-applying-cream.jpg" alt="Hyperpigmentation collection" loading="lazy" decoding="async" width="1200" height="900" />
+            <div>
+              <h3>Brightening and hyperpigmentation</h3>
+              <p>Vitamin C, niacinamide, and UV protection for even tone.</p>
+              <a class="link" href="#shop" data-filter="Hyperpigmentation">Shop brightening</a>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="assets/freepik/man-cleansing-face.jpg" alt="Acne routine" loading="lazy" decoding="async" width="1200" height="900" />
+            <div>
+              <h3>Breakout control</h3>
+              <p>Gentle surfactants and targeted actives that calm congestion.</p>
+              <a class="link" href="#shop" data-filter="Acne">Shop acne care</a>
+            </div>
+          </article>
+          <article class="collection-card">
+            <img src="assets/freepik/applying-sunscreen.jpg" alt="Dry skin bundle" loading="lazy" decoding="async" width="1200" height="900" />
+            <div>
+              <h3>Deep hydration</h3>
+              <p>Hyaluronic blends, ceramides, and occlusives for thirsty skin.</p>
+              <a class="link" href="#shop" data-filter="Dry Skin">Shop hydration</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="favorites">
+      <div class="container">
+        <div class="section-heading row between center">
+          <h2>Bestsellers</h2>
+          <a class="link" href="#shop">Browse catalog</a>
+        </div>
+        <div class="grid cols-4 cards-hover-swap" id="favGrid"></div>
+      </div>
+    </section>
+
+    <section class="section shop reveal" id="shop">
+      <div class="container">
+        <div class="section-heading">
+          <h2>All products</h2>
+          <p>Search by concern, filter by category, and build a cart that checks out via WhatsApp or in-store pickup.</p>
+        </div>
+        <div class="toolbar" role="search">
+          <div class="toolbar__group">
+            <label class="sr-only" for="searchField">Search products</label>
+            <input class="input" id="searchField" type="search" placeholder="Search product name" />
+          </div>
+          <div class="toolbar__group">
+            <label class="sr-only" for="filter">Filter by category</label>
+            <select class="input" id="filter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="toolbar__group">
+            <label class="sr-only" for="sort">Sort products</label>
+            <select class="input" id="sort">
+              <option value="">Sort</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name A-Z</option>
+            </select>
+          </div>
+          <button class="btn ghost" id="reset" type="button">Reset</button>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <section class="section ingredients reveal" id="ingredients">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Ingredients your skin understands</h2>
+          <p>Traceable, dermatologist-reviewed actives powering every Aloniva formula.</p>
+        </div>
+        <div class="ingredients__meta row between wrap">
+          <span class="muted">Every ingredient is assessed for humid, sun-rich climates.</span>
+          <a class="link" href="pages/ingredients.html">Browse all ingredients</a>
+        </div>
+        <div class="grid cols-3 ingredients-grid" id="ingredientGrid"></div>
+      </div>
+    </section>
+
+    <section class="section reviews reveal" id="reviews">
+      <div class="container">
+        <div class="reviews-card">
+          <div class="reviews-stats">
+            <div class="stat">
+              <div class="num" data-count="599">0</div>
+              <div class="label">Verified reviews</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="41">0</div>
+              <div class="label">Retail partners</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="72">0</div>
+              <div class="label">Clinics recommending</div>
+            </div>
+          </div>
+          <a class="btn primary lift" href="#shop">Shop now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section routine reveal" id="routine">
+      <div class="container columns">
+        <div>
+          <h2>Build your AM/PM routine</h2>
+          <p>Tell us your skin behaviour and the categories you need, and get instant pharmacist-backed product matches plus ready-made bundles.</p>
+          <ul class="ticks">
+            <li data-icon="skin">Skin-type aware suggestions for Dry, Oily, Sensitive, or Balanced skin</li>
+            <li data-icon="filters">Filter by cleansers, treatments, moisturisers, sunscreen, and more</li>
+            <li data-icon="bundles">Starter bundles and step guidance generated on the spot</li>
+          </ul>
+          <a class="btn primary" id="consult" href="https://wa.me/256750491105?text=I%20would%20like%20a%20routine%20consult">Start consult on WhatsApp</a>
+        </div>
+        <div class="card routine-card">
+          <h3>Starter bundles</h3>
+          <ul>
+            <li><strong>Acne Starter:</strong> Clear Balance Acne Cleanser + Rapid Spot Acne Gel + Sunshield 50 Sunscreen</li>
+            <li><strong>Brightening Glow:</strong> Gentle Touch Foaming Cleanser + Radiant Glow Brightening Lotion + Sunshield 50 Sunscreen</li>
+            <li><strong>Dry Skin Rescue:</strong> Aqua Boost Hydrating Serum + Daily Silk Moisturizing Lotion + Intense Moisture Body Butter</li>
+            <li><strong>Dark Spots Corrector:</strong> Dark Fade PIH Serum + Sunshield 50 Sunscreen</li>
+            <li><strong>Baby Care Comfort:</strong> Baby Protection Jelly + Healing Ointment</li>
+          </ul>
+          <a class="btn secondary block" href="pages/routine-builder.html">Open Routine Builder</a>
+          <p class="muted">Ask about clinic bulk pricing and partner discounts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section social reveal" id="social">
+      <div class="container">
+        <div class="section-heading row between center">
+          <h2>@alonivaskincare</h2>
+          <a class="link" href="https://www.instagram.com/alonivaskincare" target="_blank" rel="noopener">Follow Us</a>
+        </div>
+        <div class="snap-strip" id="socialStrip"></div>
+      </div>
+    </section>
+
+    <section class="section journal reveal" id="journal">
+      <div class="container">
+        <div class="section-heading row between center">
+          <h2>From the journal</h2>
+          <a class="link" href="blog">Read the blog</a>
+        </div>
+        <div class="journal-grid" id="journalGrid"></div>
+      </div>
+    </section>
+
+    <section class="section newsletter reveal" id="newsletter">
+      <div class="container newsletter-card">
+        <div>
+          <h2>Get pharmacist notes and launch alerts</h2>
+          <p>Join our newsletter for routine tips, limited releases, and clinic events. Sent twice a month.</p>
+        </div>
+        <form class="newsletter-form" action="https://formspree.io/f/xldprdlp" method="POST">
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input class="input" id="newsletterEmail" name="email" type="email" placeholder="name@email.com" autocomplete="email" required />
+          <button class="btn primary" type="submit">Sign up</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section faq reveal" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+          <p>Quick answers on shipping, consultations, and routine support.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How do I qualify for free delivery?</summary>
+            <p>Add products worth UGX 120,000 or more and delivery within Kampala is complimentary. The cart tracks your progress against the threshold.</p>
+          </details>
+          <details>
+            <summary>Do you ship outside Uganda?</summary>
+            <p>We deliver nationwide through our partner pharmacies. Regional East African shipping can be arranged by contacting support.</p>
+          </details>
+          <details>
+            <summary>Can I consult a pharmacist before purchase?</summary>
+            <p>Yes. Use the routine builder or book a WhatsApp consult and a pharmacist will review your routine within 48 hours.</p>
+          </details>
+          <details>
+            <summary>What payment options are available?</summary>
+            <p>We accept mobile money, card payments via partner pharmacies, and cash-on-delivery in Kampala. Clinics can request an invoice for bulk orders.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <section class="section contact reveal" id="contact">
+      <div class="container columns">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>
+            <strong>Phone:</strong> <a href="tel:+256750491105">+256 750 491 105</a><br />
+            <strong>Email:</strong> <a href="mailto:info@aloniva.com">info@aloniva.com</a><br />
+            Kampala and Mbarara partner pharmacies
+          </p>
+          <div class="retailers" id="retailers">
+            <h3>Retail partners</h3>
+            <ul>
+              <li>First Pharmacy - Kampala</li>
+              <li>Guardian Health Pharmacy - Kampala</li>
+              <li>D-plus Pharmacy - Mbarara</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Message us</h2>
+          <form action="https://formspree.io/f/xldprdlp" method="POST">
+            <input class="input" name="name" placeholder="Your name" required />
+            <input class="input" name="email" placeholder="Your email" type="email" required />
+            <textarea class="input" name="message" placeholder="How can we help?" rows="4" required></textarea>
+            <button class="btn primary" type="submit">Send</button>
+            <small>Please type and send your message.</small>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand" href="#hero" aria-label="Aloniva home">
+          <img class="brand__mark" src="assets/nivera-logo.svg" alt="Aloniva" width="96" height="96" />
+        </a>
+        <p class="muted">Evidence-led skincare crafted in Uganda for sun-rich, humid climates.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#favorites">Bestsellers</a></li>
+          <li><a href="#collections">Shop by concern</a></li>
+          <li><a href="pages/routine-builder.html">Routine Builder</a></li>
+          <li><a href="offers">Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#trust">Our promise</a></li>
+          <li><a href="#retailers">Retail partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p class="muted">Nivera Products Ltd<br />P.O.Box 422391, Mbarara<br />Mbarara, Uganda</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/alonivaskincare" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@alonivaskincare" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/@alonivaskincare" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <small>&copy; <span id="year"></span> Nivera Products Ltd. All rights reserved.</small>
+      <small>Made with care in Uganda.</small>
+    </div>
+  </footer>
+
+  <aside class="cart" id="cart" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Shopping cart">
+    <div class="cart-header row between center">
+      <h3>Your cart</h3>
+      <button class="btn icon" id="closeCart" type="button" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <h4 class="order-summary__title">Order summary</h4>
+      <div class="row between">
+        <strong>Total</strong>
+        <strong id="cartTotal" aria-live="polite">UGX 0</strong>
+      </div>
+      <p class="cart-delivery" id="cartDelivery" aria-live="polite"></p>
+      <div class="order-actions">
+        <button class="btn primary block" id="checkout" type="button">Checkout via WhatsApp</button>
+        <button class="btn ghost block" id="clearCart" type="button">Clear cart</button>
+      </div>
+    </div>
+  </aside>
+
+  <dialog class="modal" id="quickView" aria-labelledby="qvTitle">
+    <div class="modal-content">
+      <button class="btn icon modal-close" id="closeQV" aria-label="Close">&times;</button>
+      <div class="modal-grid">
+        <img id="qvImg" alt="Product image" />
+        <div>
+          <h3 id="qvTitle"></h3>
+          <div class="kicker" id="qvMeta"></div>
+          <p class="price" id="qvPrice"></p>
+          <p class="muted" id="qvDescription">Formulated by pharmacists. Gentle, effective, routine-friendly.</p>
+          <button class="btn primary" id="qvAdd" type="button">Add to cart</button>
+          <p class="muted bulk-note">For bulk purchasing:</p>
+          <button class="btn ghost" id="qvBulk" type="button">Bulk purchase via WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script defer src="data/products.js"></script>
+  <script type="module" src="data/ingredients.js"></script>
+  <script defer src="data/blogs.js"></script>
+  <script defer src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js");
+      });
+    }
+  </script>
+</body>
+</html>

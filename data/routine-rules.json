@@ -1,0 +1,1 @@
+{ "sensitivity":[{"tag":"strong-acid","penalty":18},{"tag":"retinoid","penalty":18}],"pregnancyBlock":["retinoid","high-salicylic"],"boosts":[{"concern":"acne","tag":"acne","weight":10}] }

@@ -1,0 +1,26 @@
+{
+  "name": "Aloniva",
+  "short_name": "Aloniva",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1D37",
+  "theme_color": "#1DD4E7",
+  "description": "Aloniva — Dermatologist-inspired skincare for hydrated, radiant skin.",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

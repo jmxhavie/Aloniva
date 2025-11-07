@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Aloniva Formula Builder</title>
+  <link rel="canonical" href="https://aloniva.com/formula-builder" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- ===========================
+    ALONIVA ICON & METADATA SETUP
+  =========================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A1D37">
+  <meta name="application-name" content="Aloniva">
+  <meta name="msapplication-TileColor" content="#0A1D37">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aloniva",
+    "url": "https://aloniva.com/",
+    "logo": "https://aloniva.com/assets/icons/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/aloniva",
+      "https://www.facebook.com/aloniva",
+      "https://www.linkedin.com/company/aloniva"
+    ]
+  }
+  </script>
+</head>
+<body class="builder-body">
+  <header class="builder-main-header theme-header">
+    <div class="container builder-header__inner">
+      <a class="brand" href="../index.html" aria-label="Back to Aloniva home">
+        <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="64" height="64" />
+      </a>
+      <nav aria-label="Builder navigation">
+        <a class="link" href="../index.html">Storefront</a>
+        <a class="link" href="../pages/shop.html">Shop</a>
+        <a class="link" href="../pages/ingredients.html">Ingredient index</a>
+        <a class="link" href="../pages/support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="builder-layout">
+    <div class="builder-toolbar" id="builderBar">
+      <div class="builder-toolbar__group">
+        <button class="btn-primary" data-action="new" type="button">New</button>
+        <button class="btn-primary" data-action="save" type="button">Save</button>
+        <button class="btn-secondary" data-action="clone" type="button">Clone</button>
+        <button class="btn-secondary" data-action="versions" type="button">Versions</button>
+        <button class="btn-secondary" data-action="templates" type="button">Templates</button>
+        <button class="btn-secondary" data-action="validate" type="button">Validate</button>
+      </div>
+      <div class="builder-toolbar__group">
+        <select id="formulaPicker" aria-label="Saved formulas"></select>
+        <button class="btn-secondary" data-action="export" type="button">Export</button>
+        <button class="btn-secondary" data-action="import" type="button">Import JSON</button>
+      </div>
+    </div>
+
+    <section class="builder-panels">
+      <aside class="builder-panel builder-panel--project">
+        <h2><img src="../assets/icon-beaker.svg" alt="" class="builder-icon" /> Project</h2>
+        <form id="projectForm" class="builder-form">
+          <label>Formula name <input id="formulaName" required /></label>
+          <label>Product type <input id="productType" placeholder="Lotion, Serum..." /></label>
+          <label>Batch size (g) <input type="number" id="batchSize" min="1" step="1" /></label>
+          <div class="builder-inline">
+            <label>Target pH <input type="number" id="targetPH" step="0.1" min="2" max="9" /></label>
+            <label>Process temp °C <input type="number" id="targetTemp" step="1" min="20" max="95" /></label>
+          </div>
+          <fieldset id="projectRegions">
+            <legend>Regions</legend>
+            <label><input type="checkbox" value="UG" data-region="UG" /> Uganda</label>
+            <label><input type="checkbox" value="EA" data-region="EA" /> East Africa</label>
+            <label><input type="checkbox" value="EU" data-region="EU" /> European Union</label>
+            <label><input type="checkbox" value="US" data-region="US" /> United States</label>
+          </fieldset>
+          <label>Notes <textarea id="notes" rows="6" placeholder="Process steps, QA guidance..."></textarea></label>
+        </form>
+        <section class="builder-metrics">
+          <h3>Quick Metrics</h3>
+          <dl>
+            <div><dt>Total %</dt><dd id="metricTotal">0%</dd></div>
+            <div><dt>Water %</dt><dd id="metricWater">0%</dd></div>
+            <div><dt>Oil %</dt><dd id="metricOil">0%</dd></div>
+            <div><dt>Cost/unit</dt><dd id="metricCost">$0.00</dd></div>
+            <div><dt>Margin</dt><dd id="metricMargin">0%</dd></div>
+          </dl>
+          <canvas id="phaseChart" width="220" height="220" aria-label="Phase distribution chart"></canvas>
+        </section>
+      </aside>
+
+      <section class="builder-panel builder-panel--canvas">
+        <div class="builder-panel__header">
+          <h2>Formula canvas</h2>
+          <button class="btn-secondary" id="addPhaseBtn" type="button">Add phase</button>
+        </div>
+        <div id="phasesContainer" class="builder-phases" aria-live="polite"></div>
+        <section class="builder-warnings" aria-live="polite">
+          <h2>Warnings & Guidance</h2>
+          <ul id="warningsList"></ul>
+        </section>
+      </section>
+
+      <aside class="builder-panel builder-panel--library">
+        <h2><img src="../assets/icon-library.svg" alt="" class="builder-icon" /> Ingredient library</h2>
+        <input id="librarySearch" placeholder="Search INCI, function, solubility…" aria-label="Search ingredient library" />
+        <div id="libraryFilters" class="builder-library-filters" role="group" aria-label="Ingredient categories"></div>
+        <div id="libraryList" class="builder-library-list"></div>
+      </aside>
+    </section>
+
+    <section class="builder-calculators" id="calculatorsPanel">
+      <button class="builder-calculators__toggle" id="calculatorsToggle" type="button">
+        Calculators & Diagnostics
+      </button>
+      <div class="builder-calculators__content" id="calculatorsContent"></div>
+    </section>
+  </main>
+
+  <footer class="theme-footer builder-footer">
+    <div class="container builder-footer__inner">
+      <p>Aloniva Cosmetic Formula Builder — offline-ready, pharmacist-guided tooling.</p>
+      <p class="builder-shortcuts">Shortcuts: Ctrl+S Save • Ctrl+E Export • Ctrl+N New ingredient row</p>
+    </div>
+  </footer>
+
+  <dialog id="versionsDialog" class="builder-dialog">
+    <div>
+      <header>
+        <h2>Version history</h2>
+        <button data-close type="button" aria-label="Close versions">✕</button>
+      </header>
+      <ul id="versionsList" class="builder-dialog__list"></ul>
+    </div>
+  </dialog>
+
+  <dialog id="templatesDialog" class="builder-dialog">
+    <div>
+      <header>
+        <h2>Templates</h2>
+        <button data-close type="button" aria-label="Close templates">✕</button>
+      </header>
+      <ul id="templatesList" class="builder-dialog__list"></ul>
+    </div>
+  </dialog>
+
+  <div id="exportMenu" class="builder-export-menu" role="menu">
+    <button type="button" data-export="pdf">PDF</button>
+    <button type="button" data-export="docx">DOCX</button>
+    <button type="button" data-export="csv">CSV</button>
+    <button type="button" data-export="json">JSON</button>
+  </div>
+
+  <input type="file" id="importJsonInput" accept="application/json" hidden />
+
+  <script src="https://cdn.jsdelivr.net/npm/idb@7/build/umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1/dist/html2canvas.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5/papaparse.min.js" defer></script>
+
+  <script type="module">
+    import '../tools/formula-builder.js';
+  </script>
+</body>
+</html>

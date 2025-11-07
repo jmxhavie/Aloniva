@@ -1,0 +1,1 @@
+{ "options":[{"id":"pickup","label":"Store Pickup (FREE)","fee":0},{"id":"kampala","label":"Kampala Delivery","fee":5000},{"id":"upcountry","label":"Upcountry Courier","fee":12000}] }

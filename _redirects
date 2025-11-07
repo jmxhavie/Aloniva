@@ -1,0 +1,23 @@
+# Enforce canonical domain (force https://aloniva.com)
+http://www.aloniva.com/* https://aloniva.com/:splat 301!
+https://www.aloniva.com/* https://aloniva.com/:splat 301!
+
+# (Optional) Example content redirects — update as needed
+# /old-page /new-page 301
+# /blog/old-article.html /blog/best-spf-no-white-cast.html 301
+
+# Pretty URLs for static pages
+/shop /pages/shop.html 200
+/bestsellers /pages/bestsellers.html 200
+/collections /pages/collections.html 200
+/routine /pages/routine-builder.html 200
+/checkout /pages/checkout-whatsapp.html 200
+/trust /pages/trust.html 200
+/faq /pages/faq.html 200
+/support /pages/support.html 200
+/offers /pages/offers.html 200
+/ingredients /pages/ingredients.html 200
+
+# Blog routes
+/blog /pages/blogs.html 301!
+/blog/* /pages/blogs.html 301!

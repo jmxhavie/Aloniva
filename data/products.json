@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "name": "Daily Silk Moisturizing Lotion",
+      "sku": "AL-DL-200",
+      "price": 28000,
+      "status": "active",
+      "category": "Moisturizers",
+      "image": "assets/freepik/couple-skincare.jpeg",
+      "description": "Lightweight daily lotion for humid climates.",
+      "ingredients": "Glycerin, Niacinamide, Panthenol",
+      "how_to_use": "Apply on clean skin twice daily.",
+      "tags": [
+        "moisturizer",
+        "daily"
+      ]
+    },
+    {
+      "name": "Sunshield 50 SPF50+",
+      "sku": "AL-SS-050",
+      "price": 45000,
+      "status": "active",
+      "category": "Sunscreen",
+      "image": "assets/freepik/applying-sunscreen.jpeg",
+      "description": "No-white-cast sunscreen for darker tones.",
+      "ingredients": "Uvinul A Plus, Tinosorb S, etc.",
+      "how_to_use": "Reapply every 2 hours with sun exposure.",
+      "tags": [
+        "sunscreen",
+        "spf50"
+      ]
+    }
+  ]
+}

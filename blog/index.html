@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Blog | Aloniva Skincare</title>
+  <link rel="canonical" href="https://aloniva.com/blog/"/>
+  <meta name="description" content="Latest pharmacist-written skincare guidance and routines from Aloniva."/>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- ===========================
+    ALONIVA ICON & METADATA SETUP
+  =========================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A1D37">
+  <meta name="application-name" content="Aloniva">
+  <meta name="msapplication-TileColor" content="#0A1D37">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aloniva",
+    "url": "https://aloniva.com/",
+    "logo": "https://aloniva.com/assets/icons/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/aloniva",
+      "https://www.facebook.com/aloniva",
+      "https://www.linkedin.com/company/aloniva"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__bar">
+      <!-- Global Search -->
+      <div class="global-search" role="search">
+        <label class="sr-only" for="globalSearch">Search products and ingredients</label>
+        <input
+          id="globalSearch"
+          class="search-input"
+          type="search"
+          placeholder="Search products or ingredients…"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="searchListbox"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+        />
+        <div id="searchListbox" class="search-dropdown" role="listbox" aria-label="Search suggestions" hidden></div>
+      </div>
+      <script type="module">
+        import '../tools/search.js';
+      </script>
+      <button class="nav-toggle" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../pages/shop.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuShop">Shop</button>
+          <div class="dropdown" id="menuShop" role="menu">
+            <a href="../pages/shop.html" role="menuitem">All products</a>
+            <a href="../pages/bestsellers.html" role="menuitem">Bestsellers</a>
+            <a href="../pages/collections.html" role="menuitem">Shop by concern</a>
+            <a href="../pages/routine-builder.html" role="menuitem">Routine Builder</a>
+            <a href="../pages/ingredients.html" role="menuitem">Ingredients</a>
+          </div>
+        </div>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../pages/blogs.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuLearn">Learn</button>
+          <div class="dropdown" id="menuLearn" role="menu">
+            <a href="../pages/trust.html" role="menuitem">Our promise</a>
+            <a href="../pages/blogs.html" role="menuitem">Blog</a>
+            <a href="../pages/faq.html" role="menuitem">FAQ</a>
+          </div>
+        </div>
+        <a href="../pages/support.html">Support</a>
+        <a href="../pages/formula-builder.html">Formula Builder</a>
+      </nav>
+      <a class="brand" href="../index.html" aria-label="Aloniva home">
+        <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="44" height="44" />
+      </a>
+      <div class="header-actions">
+        <button class="search-toggle" id="searchToggle" type="button" aria-expanded="false" aria-controls="globalSearch">
+          <span class="sr-only">Toggle search</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="20" y1="20" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line></svg>
+        </button>
+        <button class="cart-trigger" aria-label="Cart" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="cart" aria-expanded="false">
+          <span class="cart-trigger__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="9" cy="20" r="1.5" fill="currentColor"></circle>
+              <circle cx="17" cy="20" r="1.5" fill="currentColor"></circle>
+              <path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.5a2 2 0 0 0 1.9-1.4l2-6.4H7.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Cart</span>
+          <span class="cart-trigger__count" id="cartCount" aria-live="polite" aria-atomic="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" id="main">
+    <h1>Blog</h1>
+    <div id="posts" class="grid"></div>
+  </main>
+
+  <aside class="cart" id="cart" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Shopping cart">
+    <div class="cart-header row between center">
+      <h3>Your cart</h3>
+      <button class="btn icon" id="closeCart" type="button" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><h4 class="order-summary__title">Order summary</h4><div class="row between">
+        <strong>Total</strong>
+        <strong id="cartTotal" aria-live="polite">UGX 0</strong>
+      </div><p class="cart-delivery" id="cartDelivery" aria-live="polite"></p><div class="order-actions"><button class="btn primary block" id="checkout" type="button">Checkout via WhatsApp</button><button class="btn ghost block" id="clearCart" type="button">Clear cart</button></div></div>
+  </aside>
+
+  <dialog class="modal" id="quickView" aria-labelledby="qvTitle">
+    <div class="modal-content">
+      <button class="btn icon modal-close" id="closeQV" aria-label="Close" type="button">&times;</button>
+      <div class="modal-grid">
+        <img id="qvImg" alt="Product image" />
+        <div>
+          <h3 id="qvTitle"></h3>
+          <div class="kicker" id="qvMeta"></div>
+          <p class="price" id="qvPrice"></p>
+          <p class="muted" id="qvDescription">Formulated by pharmacists. Gentle, effective, routine-friendly.</p>
+          <button class="btn primary" id="qvAdd" type="button">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script defer src="../data/blogs.js"></script>
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Aloniva home">
+          <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="96" height="96" />
+        </a>
+        <p class="muted">Evidence-led skincare crafted in Uganda for sun-rich, humid climates.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="../index.html#favorites">Bestsellers</a></li>
+          <li><a href="../index.html#collections">Shop by concern</a></li>
+          <li><a href="../pages/routine-builder.html">Routine Builder</a></li>
+          <li><a href="../pages/offers.html">Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="../index.html#journal">Journal</a></li>
+          <li><a href="../pages/trust.html">Our promise</a></li>
+          <li><a href="../pages/support.html#retailers">Retail partners</a></li>
+          <li><a href="../pages/support.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p class="muted">Nivera Products Ltd<br />P.O.Box 422391, Mbarara<br />Mbarara, Uganda</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/alonivaskincare" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@alonivaskincare" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/@alonivaskincare" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <small>&copy; <span id="year"></span> Nivera Products Ltd. All rights reserved.</small>
+      <small>Made with care in Uganda.</small>
+    </div>
+  </footer>
+
+  <script>
+  (async function(){
+    try{
+      let data;
+      try{
+        const res = await fetch('../data/blogs.json', {cache:'no-store'});
+        if(res.ok) data = await res.json();
+      }catch(_){}
+      if(!data && window.BLOGS) data = window.BLOGS;
+      if(!data) throw new Error('No blog data');
+
+      const posts = (data.posts||[]).sort((a,b)=> new Date(b.date)-new Date(a.date));
+      const wrap = document.getElementById('posts');
+      if(!posts.length){ wrap.innerHTML = '<p class="muted">No posts yet.</p>'; return; }
+      wrap.innerHTML = posts.map(p=>{
+        const date = new Date(p.date);
+        const label = isNaN(date) ? '' : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        const title = (p.title||'').replace(' | Aloniva Skincare','');
+        let img = p.cover_image || '../assets/freepik/lady-applying-cream.jpg';
+        if (!/^https?:\/\//i.test(img) && !img.startsWith('/')) {
+          img = '../' + img.replace(/^\/+/, '');
+        }
+        const href = '../pages/blogs.html#' + encodeURIComponent(p.slug||'');
+        return `
+          <article class="card blog-card">
+            <img class="blog-card__img" src="${img}" alt="${title}" loading="lazy" decoding="async" />
+            <div style="display:grid;gap:8px;margin-top:12px">
+              <p class="kicker">${label}</p>
+              <h3 style="margin:0"><a class="link" href="${href}">${title}</a></h3>
+              <p class="muted">${(p.excerpt||'').replace(/</g,'&lt;')}</p>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }catch(e){ console.warn('blogs load failed', e); }
+  })();
+  </script>
+  <script defer src="../script.js"></script>
+</body>
+</html>

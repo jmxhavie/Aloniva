@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Checkout via WhatsApp | Aloniva</title>
+  <link rel="canonical" href="https://aloniva.com/checkout-whatsapp" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- ===========================
+    ALONIVA ICON & METADATA SETUP
+  =========================== -->
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A1D37">
+  <meta name="application-name" content="Aloniva">
+  <meta name="msapplication-TileColor" content="#0A1D37">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aloniva",
+    "url": "https://aloniva.com/",
+    "logo": "https://aloniva.com/assets/icons/logo.svg",
+    "sameAs": [
+      "https://www.instagram.com/aloniva",
+      "https://www.facebook.com/aloniva",
+      "https://www.linkedin.com/company/aloniva"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__bar">
+      <!-- Global Search -->
+      <div class="global-search" role="search">
+        <label class="sr-only" for="globalSearch">Search products and ingredients</label>
+        <input
+          id="globalSearch"
+          class="search-input"
+          type="search"
+          placeholder="Search products or ingredients…"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="searchListbox"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+        />
+        <div id="searchListbox" class="search-dropdown" role="listbox" aria-label="Search suggestions" hidden></div>
+      </div>
+      <script type="module">
+        import '../tools/search.js';
+      </script>
+      <button class="nav-toggle" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../pages/shop.html" aria-expanded="false" aria-haspopup="true" aria-controls="menuShop">Shop</button>
+          <div class="dropdown" id="menuShop" role="menu">
+            <a href="../pages/shop.html" role="menuitem">All products</a>
+            <a href="../pages/bestsellers.html" role="menuitem">Bestsellers</a>
+            <a href="../pages/collections.html" role="menuitem">Shop by concern</a>
+            <a href="../pages/routine-builder.html" role="menuitem">Routine Builder</a>
+            <a href="../pages/ingredients.html" role="menuitem">Ingredients</a>
+          </div>
+        </div>
+        <div class="menu has-dropdown">
+          <button class="menu__toggle" type="button" data-href="../blog/" aria-expanded="false" aria-haspopup="true" aria-controls="menuLearn">Learn</button>
+          <div class="dropdown" id="menuLearn" role="menu">
+            <a href="../pages/trust.html" role="menuitem">Our promise</a>
+            <a href="../pages/blogs.html" role="menuitem">Blog</a>
+            <a href="../pages/faq.html" role="menuitem">FAQ</a>
+          </div>
+        </div>
+        <a href="../pages/support.html">Support</a>
+        <a href="../pages/formula-builder.html">Formula Builder</a>
+      </nav>
+      <a class="brand" href="../index.html" aria-label="Aloniva home">
+        <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="44" height="44" />
+      </a>
+      <div class="header-actions">
+        <button class="search-toggle" id="searchToggle" type="button" aria-expanded="false" aria-controls="globalSearch">
+          <span class="sr-only">Toggle search</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="20" y1="20" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line></svg>
+        </button>
+        <button class="cart-trigger" aria-label="Cart" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="cart" aria-expanded="false">
+          <span class="cart-trigger__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="9" cy="20" r="1.5" fill="currentColor"></circle>
+              <circle cx="17" cy="20" r="1.5" fill="currentColor"></circle>
+              <path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.5a2 2 0 0 0 1.9-1.4l2-6.4H7.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Cart</span>
+          <span class="cart-trigger__count" id="cartCount" aria-live="polite" aria-atomic="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="wo-hero">
+    <div class="container" style="padding:24px 16px; text-align:center;">
+      <p class="wo-hero__lead">Review your order, add your details, and send us your order on WhatsApp.</p>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="section" aria-labelledby="checkoutHeading">
+      <div class="container">
+        <div class="grid-2" id="wo-grid">
+          <form id="wo-form" class="card wo-card" novalidate>
+            <h2 class="wo-heading" id="checkoutHeading" style="margin-top:0;">Customer Details</h2>
+            <p class="wo-card__intro">Tell us where to send your products and how to reach you. All fields marked with * are required.</p>
+
+            <label class="wo-field">
+              <span class="wo-field__icon" aria-hidden="true"></span>
+              <span class="wo-field__label">Full Name*</span>
+              <input type="text" name="name" required placeholder="Your name" />
+            </label>
+            <label class="wo-field">
+              <span class="wo-field__icon wo-field__icon--phone" aria-hidden="true"></span>
+              <span class="wo-field__label">Phone (for delivery updates)*</span>
+              <input type="tel" name="phone" required placeholder="+256 7xx xxx xxx" />
+            </label>
+            <label class="wo-field">
+              <span class="wo-field__icon wo-field__icon--van" aria-hidden="true"></span>
+              <span class="wo-field__label">Delivery Method*</span>
+              <select name="delivery" required></select>
+            </label>
+            <label class="wo-field">
+              <span class="wo-field__icon wo-field__icon--pin" aria-hidden="true"></span>
+              <span class="wo-field__label">Delivery Address (or pickup location)</span>
+              <textarea name="address" rows="3" placeholder="e.g., Kisementi, Plot..., Kampala"></textarea>
+            </label>
+            <label class="wo-field">
+              <span class="wo-field__icon wo-field__icon--wallet" aria-hidden="true"></span>
+              <span class="wo-field__label">Payment Method*</span>
+              <select name="payment" required></select>
+            </label>
+            <label class="wo-field">
+              <span class="wo-field__icon wo-field__icon--note" aria-hidden="true"></span>
+              <span class="wo-field__label">Notes (optional)</span>
+              <textarea name="notes" rows="3" placeholder="Landmark, delivery time, fragrance preference…"></textarea>
+            </label>
+
+            <div class="wo-hint">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 14.5a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 16.5Zm1-4.5h-2a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z" fill="currentColor"/></svg>
+              <span>We’ll confirm delivery windows and payment details via WhatsApp after you send the order.</span>
+            </div>
+          </form>
+
+          <section id="wo-summary" class="card" aria-labelledby="checkoutSummary">
+            <h2 class="wo-heading" id="checkoutSummary" style="margin-top:0;">Order Summary</h2>
+            <div id="wo-items"></div>
+            <hr/>
+            <div class="row-between"><span>Subtotal</span><strong id="wo-subtotal">—</strong></div>
+            <div class="row-between"><span>Shipping</span><strong id="wo-shipping">—</strong></div>
+            <div class="row-between"><span>Total</span><strong id="wo-total">—</strong></div>
+            <div class="wo-actions">
+              <a href="../index.html#cart" class="btn-secondary">Edit Cart</a>
+              <button type="button" id="wo-clear" class="btn-secondary">Clear Cart</button>
+              <button type="button" id="wo-send" class="btn-primary">Send Order via WhatsApp</button>
+            </div>
+            <p id="wo-error" class="wo-error" aria-live="polite"></p>
+            <p class="small">By sending, you agree to our terms and privacy policy.</p>
+            <ul class="wo-meta">
+              <li><span aria-hidden="true"></span>Securely stored delivery details – no card needed.</li>
+              <li><span aria-hidden="true"></span>Free Kampala delivery on orders from UGX 120,000.</li>
+              <li><span aria-hidden="true"></span>Need help first? Tap <a class="link" href="../pages/support.html">support</a> for a pharmacist consult.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="wo-how">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How WhatsApp checkout works</h2>
+          <p>Complete your order in three quick steps. Need help? <a class="link" href="../pages/support.html">Talk to support</a>.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="kicker">Step 1</span>
+            <h3>Confirm your products</h3>
+            <p>Review the items pulled in from your cart. You can still <a class="link" href="../index.html#cart">edit your cart</a> or <a class="link" href="../pages/shop.html">add more products</a> before sending.</p>
+          </article>
+          <article class="card">
+            <span class="kicker">Step 2</span>
+            <h3>Share your delivery details</h3>
+            <p>Fill in the form with your name, phone number, and preferred delivery option. The WhatsApp message is generated automatically — simply hit “Send”.</p>
+          </article>
+          <article class="card">
+            <span class="kicker">Step 3</span>
+            <h3>Get order confirmation</h3>
+            <p>Our pharmacist team replies on WhatsApp with your delivery ETA and payment instructions. Live chat hours are 8am–9pm EAT, Monday to Sunday.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="wo-delivery">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Delivery & payment options</h2>
+          <p>We currently fulfil across Uganda. If you are outside Uganda, <a class="link" href="../pages/support.html">contact support</a> and we will recommend a partner.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Delivery windows</h3>
+            <ul>
+              <li><strong>Store pickup (free):</strong> Collect from our Ntinda lab or any partner listed on the <a class="link" href="../pages/support.html">support page</a>.</li>
+              <li><strong>Kampala delivery (UGX 5,000):</strong> Same-day dispatch for orders placed before 3pm. Evening deliveries available on request.</li>
+              <li><strong>Upcountry courier (UGX 12,000):</strong> Shipments go out every weekday via secured pharmacy couriers with tracking updates.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Ways to pay</h3>
+            <ul>
+              <li><strong>Cash on delivery:</strong> Available for Kampala, Entebbe, and Wakiso. Please prepare exact change for faster handover.</li>
+              <li><strong>Mobile Money:</strong> Pay via MTN or Airtel on <a class="link" href="tel:+256750491105">+256 750 491 105</a>. Share the confirmation screenshot in the WhatsApp chat.</li>
+              <li><strong>Corporate invoicing:</strong> Clinics and spas can request monthly billing through <a class="link" href="mailto:niveraproductsltd@gmail.com">niveraproductsltd@gmail.com</a>.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="wo-help">
+      <div class="container">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Need pharmacist guidance?</h3>
+            <p>Share photos or concerns in the WhatsApp chat — a pharmacist will tailor routine suggestions before you pay. You can also submit the <a class="link" href="../pages/routine-builder.html">routine builder</a> for a detailed plan.</p>
+            <p>Prefer a call? Reach us on <a class="link" href="tel:+256750491105">+256 750 491 105</a> or email <a class="link" href="mailto:niveraproductsltd@gmail.com">niveraproductsltd@gmail.com</a>.</p>
+          </article>
+          <article class="card">
+            <h3>More resources</h3>
+            <ul>
+              <li><a class="link" href="../pages/faq.html">Frequently asked questions</a></li>
+              <li><a class="link" href="../pages/trust.html">Our pharmacist promise</a></li>
+              <li><a class="link" href="../pages/offers.html">Current offers & bundles</a></li>
+              <li><a class="link" href="../pages/formula-builder.html">Request a custom formula</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Aloniva home">
+          <img class="brand__mark" src="../assets/nivera-logo.svg" alt="Aloniva" width="96" height="96" />
+        </a>
+        <p class="muted">Evidence-led skincare crafted in Uganda for sun-rich, humid climates.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="../index.html#favorites">Bestsellers</a></li>
+          <li><a href="../index.html#collections">Shop by concern</a></li>
+          <li><a href="../pages/routine-builder.html">Routine Builder</a></li>
+          <li><a href="../pages/offers.html">Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="../index.html#journal">Journal</a></li>
+          <li><a href="../pages/trust.html">Our promise</a></li>
+          <li><a href="../pages/support.html#retailers">Retail partners</a></li>
+          <li><a href="../pages/support.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p class="muted">Nivera Products Ltd<br />P.O.Box 422391, Mbarara<br />Mbarara, Uganda</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/alonivaskincare" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@alonivaskincare" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/@alonivaskincare" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <small>&copy; <span id="year"></span> Nivera Products Ltd. All rights reserved.</small>
+      <small>Made with care in Uganda.</small>
+    </div>
+  </footer>
+
+  <aside class="cart" id="cart" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Shopping cart">
+    <div class="cart-header row between center"><h3>Your cart</h3><button class="btn icon" id="closeCart" type="button" aria-label="Close cart">&times;</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><h4 class="order-summary__title">Order summary</h4><div class="row between"><strong>Total</strong><strong id="cartTotal" aria-live="polite">UGX 0</strong></div><p class="cart-delivery" id="cartDelivery" aria-live="polite"></p><div class="order-actions"><button class="btn primary block" id="checkout" type="button">Checkout via WhatsApp</button><button class="btn ghost block" id="clearCart" type="button">Clear cart</button></div></div>
+  </aside>
+  <dialog class="modal" id="quickView" aria-labelledby="qvTitle">
+    <div class="modal-content">
+      <button class="btn icon modal-close" id="closeQV" aria-label="Close" type="button">&times;</button>
+      <div class="modal-grid">
+        <img id="qvImg" alt="Product image" />
+        <div>
+          <h3 id="qvTitle"></h3>
+          <div class="kicker" id="qvMeta"></div>
+          <p class="price" id="qvPrice"></p>
+          <p class="muted" id="qvDescription">Formulated by pharmacists. Gentle, effective, routine-friendly.</p>
+          <button class="btn primary" id="qvAdd" type="button">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script defer src="../script.js"></script>
+  <script type="module" src="../tools/checkout-whatsapp.js"></script>
+</body>
+</html>
